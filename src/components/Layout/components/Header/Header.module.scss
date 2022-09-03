@@ -1,0 +1,111 @@
+.wrapper {
+    --search-height: 46px;
+    --search-top-space: 9px;
+    --search-bottom-width: 52px;
+    --white: #fff;
+
+    height: var(--default-layout-header-height);
+    box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.inner {
+    height: 100%;
+    width: var(--default-layout-width);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+}
+
+.Search,
+.search-result {
+    width: 361px;
+}
+
+.Search {
+    position: relative;
+    width: 361px;
+    height: var(--search-height);
+    background-color: rgba(22, 24, 35, 0.06);
+    border-radius: 92px;
+    padding-left: 16px;
+    display: flex;
+    border: 1.5px solid transparent;
+    input {
+        flex: 1;
+        color: #828282;
+        font-size: 1.6rem;
+
+        background-color: transparent;
+        caret-color: var(--primary);
+        height: 100%;
+        color: var(--black);
+    }
+    input:not(:placeholder-shown) ~ .Search-button {
+        color: rgba(22, 24, 35, 0.8);
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        height: calc(var(--search-height) - var(--search-top-space) * 2);
+        background-color: rgba(22, 24, 35, 0.25);
+        width: 1px;
+        top: var(--search-top-space);
+        right: var(--search-bottom-width);
+    }
+    &:focus-within {
+        border: 1.5px solid rgba(22, 24, 35, 0.2);
+    }
+}
+
+.search-result {
+    padding-top: 8px;
+}
+.search-title {
+    padding: 5px 12px;
+    color: rgba(22, 24, 35, 0.5);
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.clear,
+.loading {
+    position: absolute;
+    right: 68px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(22, 24, 35, 0.8);
+}
+
+.Search-button {
+    width: var(--search-bottom-width);
+    height: 100%;
+    border-top-right-radius: 92px;
+    border-bottom-right-radius: 92px;
+    font-size: 1.8rem;
+    color: rgba(22, 24, 35, 0.55);
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+        cursor: pointer;
+    }
+    &:active {
+        background-color: rgba(22, 24, 35, 0.06);
+        cursor: pointer;
+    }
+}
+
+.custom-login {
+    color: red;
+}
+
+.more-btn {
+    font-size: 2rem;
+    margin-left: 26px;
+    background-color: transparent;
+    padding: 6px;
+}
